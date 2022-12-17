@@ -1,6 +1,6 @@
 package control;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.sql.Date;
 import java.util.List;
 
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.Dao;
+import modal.Bill;
 import modal.Category;
-import modal.ListSumMoney;
 
 @WebServlet("/billservlet")
 public class BillServlet extends HttpServlet {
@@ -27,7 +27,7 @@ public class BillServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		Dao dao = new Dao();
-		List<ListSumMoney> list = dao.getSumMoney();
+		List<Bill> list = dao.getSumMoney();
 		List<Category> cateList = dao.getSumMoneyCate();
 		
 		request.setAttribute("listS", list);

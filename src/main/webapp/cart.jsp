@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="col l-4">
-                        <div class="pay" style="padding: 0 20px">
+                        <div class="pay" style="padding: 0 20px 20px 20px">
                             <h3 class="pay__heading">Order</h3>
                             <div class="pay__total">
                                 <span class="pay__total-name">Total:</span>
@@ -103,7 +103,7 @@
                                     <%=nf.format(total)%>
                                 </div>
                             </div>
-                            <a href="./checkout.html" class="pay__btn">Checkout</a>
+                            <a href="checkout.jsp" class="pay__btn">Checkout</a>
                         </div>
                     </div>
                 </div>

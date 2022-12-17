@@ -1,6 +1,6 @@
 package dao;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +13,6 @@ import modal.Bill;
 import modal.Cart;
 import modal.Category;
 import modal.Detail;
-import modal.ListSumMoney;
 import modal.Product;
 import modal.User;
 
@@ -92,8 +91,8 @@ public class Dao {
 	}
 	
 	// Thống kê biểu đồ cột doanh thu của cửa hàng theo tuỳ chọn thời gian
-	public List<ListSumMoney> getSumMoney() {
-		List<ListSumMoney> list = new ArrayList<ListSumMoney>();
+	public List<Bill> getSumMoney() {
+		List<Bill> list = new ArrayList<Bill>();
  		String query = "select (YEAR(ngayban)) as Năm, sum(bill.tongtien) as tongtien from bill group by (YEAR(ngayban))";
 		
 		try {
@@ -101,7 +100,7 @@ public class Dao {
 			ps = conn.prepareStatement(query);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				list.add(new ListSumMoney(rs.getInt(1), rs.getInt(2)));
+				list.add(new Bill(rs.getInt(1), rs.getDouble(2)));
 			}
 		} catch (Exception e) {
 
@@ -178,12 +177,12 @@ public class Dao {
 	
 	public static void main(String[] args) {
 		Dao dao = new Dao();
-//		List<Category> list = dao.getSumMoneyCate();
+		List<Bill> list = dao.getSumMoney();
 		Detail p = dao.getDetailProductById(1);
 		User u = dao.getUser("hunu");
-		System.out.println(p);
-//		for(Category l : list) {
-//			System.out.println(l);
-//		}
+//		System.out.println(p);
+		for(Bill l : list) {
+			System.out.println(l);
+		}
 	}
 }

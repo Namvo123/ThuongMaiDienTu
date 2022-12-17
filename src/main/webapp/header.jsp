@@ -85,14 +85,14 @@
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
 										<%
-										if(cartList != null) {
-											for(Cart item : cartList) {
-												amount = amount + item.getQuantity();
+											if(cartList != null) {
+												for(Cart item : cartList) {
+													amount = amount + item.getQuantity();
 										%>
 											<div class="qty"><%=nf.format(amount)%></div>
 										<%
-											}	
-										}
+												}	
+											}
 										%>										
 									</a>
 									<div class="cart-dropdown" style="padding: 15px 15px 0 15px;min-height: 200px; display: flex; flex-direction: column; justify-content: space-between;">
@@ -112,7 +112,7 @@
 													<h3 class="product-name"><a href="#"><%= dao.getProductById(c.getP().getId()).getName()%></a></h3>
 													<h4 class="product-price">
 														<span class="qty"><%=c.getQuantity()%>x</span>
-														<%=nf.format(dao.getProductById(c.getP().getId()).getPrice())%>VNĐ
+														$<%=nf.format(dao.getProductById(c.getP().getId()).getPrice())%>
 													</h4>
 												</div>
 												<a href="cart?command=removeCartIndex&id=<%=c.getP().getId() %>" class="delete">
@@ -132,7 +132,7 @@
 										</div>
 										<div class="cart-btns" style="">
 											<a href="cart.jsp">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+											<a href="checkout.jsp">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 										</div>
 										
