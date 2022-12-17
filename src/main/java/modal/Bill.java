@@ -2,19 +2,32 @@ package modal;
 
 import java.sql.Date;
 
-public class Bill {
+public class Bill{
 	private String id;
-	private String date;
+	private int pID;
+	private int cID;
+	private int uID;
+	private Date exportDate;
+	private int year;
 	private double billPrice;
 	
 	public Bill() {
 		super();
 	}
 
-	public Bill(String id, String date, double billPrice) {
+	public Bill(String id, int pID, int cID, int uID, Date exportDate, double billPrice) {
 		super();
 		this.id = id;
-		this.date = date;
+		this.pID = pID;
+		this.cID = cID;
+		this.uID = uID;
+		this.exportDate = exportDate;
+		this.billPrice = billPrice;
+	}
+
+	public Bill(int year, double billPrice) {
+		super();
+		this.year = year;
 		this.billPrice = billPrice;
 	}
 
@@ -26,12 +39,44 @@ public class Bill {
 		this.id = id;
 	}
 
-	public String getDate() {
-		return date;
+	public int getpID() {
+		return pID;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setpID(int pID) {
+		this.pID = pID;
+	}
+
+	public int getcID() {
+		return cID;
+	}
+
+	public void setcID(int cID) {
+		this.cID = cID;
+	}
+
+	public int getuID() {
+		return uID;
+	}
+
+	public void setuID(int uID) {
+		this.uID = uID;
+	}
+
+	public Date getExportDate() {
+		return exportDate;
+	}
+
+	public void setExportDate(Date exportDate) {
+		this.exportDate = exportDate;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 	public double getBillPrice() {
@@ -44,10 +89,8 @@ public class Bill {
 
 	@Override
 	public String toString() {
-		return "Bill [id=" + id + ", date=" + date + ", billPrice=" + billPrice + "]";
+		return "Bill [year=" + year + ", billPrice=" + billPrice + "]";
 	}
-
-
 	
 	
 }

@@ -42,8 +42,8 @@ function drawBasic() {
     var data = google.visualization.arrayToDataTable([
       ['Year', 'Revenue: $',],
       <c:forEach items="${listS}" var="entry">
-      	[ '${entry.year}', ${entry.money} ],
-  		</c:forEach>
+      	[ '${entry.year}', ${entry.billPrice} ],
+  	  </c:forEach>
     ]);
 
     var options = {
