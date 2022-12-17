@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #751fff;
+    --white-color: #fff;
+    --text-color: #ccc;
+    --black-color: #000;
+    --redfack-color: #d72d2d;
+
+    --header-height: 116px;
+    --header-one-height: 74px;
+    --height-paginate: 30px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+.app {
+    background-color: #eee;
+}
+
+.app.app1 {
+    padding: 100px 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}

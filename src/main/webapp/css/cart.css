@@ -1,0 +1,142 @@
+.cart {
+    margin-top: 150px;
+}
+
+.cart-wrap {
+    background-color: var(--white-color);
+}
+
+.cart__heading {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 50px 0 40px;
+    margin-bottom: 30px;
+}
+
+.cart-body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.cart-body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: -23px;
+    border: 0.1px solid #d10024;
+}
+
+.cart-body__one {
+    display: flex;
+    width: 50%;
+}
+
+.cart-body__two {
+    display: flex;
+    width: 350px;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #d10024;
+}
+
+.cart-content {
+    margin: 4px 0 0 24px;
+}
+
+.cart-content__name {
+    font-size: 1.6rem;
+    font-weight: 300;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-height: 1.8rem;
+    height: 1.8rem;
+
+    margin-bottom: 12px;
+}
+
+.cart-content__price {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.cart-quantity {
+    font-weight: 300;
+    border: 1px solid #d10024;
+    display: flex;
+    padding: 6px 8px;
+    align-items: center;
+}
+
+.cart-quantity__number {
+    font-size: 1.6rem;
+    margin: 0 12px;
+}
+
+.cart-quantity__icon {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.cart__sum-price {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.cart-close__icon {
+    font-size: 1.8rem;
+    color: #d10024;
+    text-decoration: none;
+}
+
+.pay {
+    text-align: center;
+}
+
+.pay__heading {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 14px 0;
+}
+
+.pay__total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 21px 36px;
+    border-top: 1px solid #d10024;
+    border-bottom: 1px solid #d10024;
+}
+
+.pay__btn {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    background-color: #d10024;
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px 40px;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.pay__btn:hover {
+    opacity: 0.8;
+    color: #fff;
+}
