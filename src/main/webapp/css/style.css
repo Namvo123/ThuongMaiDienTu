@@ -1919,19 +1919,13 @@ textarea.input {
   width: 100%;
 }
 
-.order-summary .order-col:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 .order-summary .order-col>div {
   display: table-cell;
   padding: 10px 0px;
 }
 
-.order-summary .order-col>div:first-child {
-  width: calc(100% - 150px);
+.order-summary .order-col:after {
+	content: "";
 }
 
 .order-summary .order-col>div:last-child {

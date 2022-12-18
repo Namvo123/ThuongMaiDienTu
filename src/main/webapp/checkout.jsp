@@ -13,6 +13,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Electro - HTML Ecommerce Template</title>
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
  		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
  		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
@@ -20,7 +21,15 @@
  		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
  		<link rel="stylesheet" href="css/font-awesome.min.css">
  		<link type="text/css" rel="stylesheet" href="css/style.css"/>
-		<title>Electro - HTML Ecommerce Template</title>
+ 		
+ 		<style type="text/css">
+ 			.order-summary .order-col>div:first-child {
+ 				 width: auto;
+ 			}
+ 			.order-summary .order-col::after {
+ 				content: none;
+ 			}
+ 		</style>
     </head>
 	<body>
 	
@@ -29,10 +38,29 @@
 		List<Product> product = dao.getProduct();
 		ArrayList<Cart> cartList = new ArrayList<Cart>();
 	%>
-	
 		<!-- HEADER -->
 		<jsp:include page="header.jsp"></jsp:include>
 		<!-- /HEADER -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Checkout</h3>
+						<ul class="breadcrumb-tree">
+							<li><a href="#">Home</a></li>
+							<li class="active">Checkout</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
 
 		<!-- SECTION -->
 		<div class="section section-padding">
@@ -40,40 +68,15 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
-					<div class="col-md-7">
-						<!-- Billing Details -->
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Billing address</h3>
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="username" placeholder="Username">
-							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="address" placeholder="Address">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="sex" placeholder="Sex">
-							</div>
-							<div class="form-group">
-								<input class="input" type="tel" name="tel" placeholder="Telephone">
-							</div>
-						</div>
-						<!-- /Billing Details -->
-					</div>
-
 					<!-- Order Details -->
-					<div class="col-md-5 order-details">
+					<div class="col-md-12 order-details">
 						<div class="section-title text-center">
 							<h3 class="title">Your Order</h3>
 						</div>
 						<div class="order-summary">
-							<div class="order-col">
+							<div class="order-col" style="display: flex; width: 100%; align-items: center; justify-content: space-between;">
 								<div><strong>PRODUCT</strong></div>
+								<div style="width: 424px;"><strong>NAME</strong></div>
 								<div><strong>TOTAL</strong></div>
 							</div>
 							<div class="order-products">
@@ -92,8 +95,9 @@
 											total = total + (item.getQuantity() 
 		                        					* dao.getProductById(item.getP().getId()).getPrice());
 								%>
-									<div class="order-col">
-										<div><%=item.getQuantity()%>x <%= dao.getProductById(item.getP().getId()).getName()%></div>
+									<div class="order-col" style="margin-bottom: 10px; display: flex; width: 100%; align-items: center; justify-content: space-between;"> 
+										<img style="width: 50px; height: 50px; border: 1px solid #d10024;" src="<%= dao.getProductById(item.getP().getId()).getImage()%>" alt="">
+										<div style="width: 400px; height: 40px; line-height: 25px; display: -webkit-box; overflow: hidden;-webkit-box-orient: vertical; -webkit-line-clamp: 1;"><%=item.getQuantity()%>x <%= dao.getProductById(item.getP().getId()).getName()%></div>
 										<div>$<%= dao.getProductById(item.getP().getId()).getPrice()%></div>
 									</div>
 								<%
@@ -110,6 +114,7 @@
 								<div><strong class="order-total">$<%=nf.format(total)%></strong></div>
 							</div>
 						</div>
+						<!-- 
 						<div class="payment-method">
 							<div class="input-radio">
 								<input type="radio" name="payment" id="payment-1">
@@ -142,13 +147,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="input-checkbox">
-							<input type="checkbox" id="terms">
-							<label for="terms">
-								<span></span>
-								I've read and accept the <a href="#">terms & conditions</a>
-							</label>
-						</div>
+						 -->
 						<a href="#" class="primary-btn order-submit">Place order</a>
 					</div>
 					<!-- /Order Details -->
