@@ -2,22 +2,23 @@ package modal;
 
 import java.sql.Date;
 
-public class Bill{
-	private String id;
+public class Bill {
+	private String bId;
 	private int pID;
 	private int cID;
 	private int uID;
 	private Date exportDate;
 	private int year;
 	private double billPrice;
+	private int quantity;
 	
 	public Bill() {
 		super();
 	}
 
-	public Bill(String id, int pID, int cID, int uID, Date exportDate, double billPrice) {
+	public Bill(String bId, int pID, int cID, int uID, Date exportDate, double billPrice) {
 		super();
-		this.id = id;
+		this.bId = bId;
 		this.pID = pID;
 		this.cID = cID;
 		this.uID = uID;
@@ -31,12 +32,12 @@ public class Bill{
 		this.billPrice = billPrice;
 	}
 
-	public String getId() {
-		return id;
+	public String getbId() {
+		return bId;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setbId(String bId) {
+		this.bId = bId;
 	}
 
 	public int getpID() {
@@ -85,6 +86,14 @@ public class Bill{
 
 	public void setBillPrice(double billPrice) {
 		this.billPrice = billPrice;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	@Override

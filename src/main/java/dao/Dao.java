@@ -174,6 +174,23 @@ public class Dao {
 		return u;
 	}
 	
+	public boolean insertBill(Bill bill) {
+		boolean result = false;
+		try {
+			String query = "insert into bill (pID, type_id, uID, quantity, tongtien) values (?, ?, ?, ?, ?)";
+			ps = conn.prepareStatement(query); 
+			ps.setInt(1, bill.getpID());
+			ps.setInt(2, bill.getcID()); 
+			ps.setInt(3, bill.getuID()); 
+			ps.setInt(4, bill.getQuantity());
+			ps.setDouble(5, bill.getBillPrice()); 
+			ps.executeUpdate();
+			result = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 	public static void main(String[] args) {
 		Dao dao = new Dao();
