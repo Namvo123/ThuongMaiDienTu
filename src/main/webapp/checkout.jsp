@@ -114,41 +114,7 @@
 								<div><strong class="order-total">$<%=nf.format(total)%></strong></div>
 							</div>
 						</div>
-						<!-- 
-						<div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1">
-								<label for="payment-1">
-									<span></span>
-									Direct Bank Transfer
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
-									<span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3">
-								<label for="payment-3">
-									<span></span>
-									Paypal System
-								</label>
-								<div class="caption">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								</div>
-							</div>
-						</div>
-						 -->
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						<a href="checkoutServlet" class="primary-btn order-submit">Place order</a>
 					</div>
 					<!-- /Order Details -->
 				</div>

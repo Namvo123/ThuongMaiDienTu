@@ -109,7 +109,9 @@
 													<img src=<%= dao.getProductById(c.getP().getId()).getImage() %> alt="">
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#"><%= dao.getProductById(c.getP().getId()).getName()%></a></h3>
+													<h3 class="product-name">
+														<a href="#" style="display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2;"><%= dao.getProductById(c.getP().getId()).getName()%></a>
+													</h3>
 													<h4 class="product-price">
 														<span class="qty"><%=c.getQuantity()%>x</span>
 														$<%=nf.format(dao.getProductById(c.getP().getId()).getPrice())%>
